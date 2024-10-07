@@ -32,6 +32,9 @@ defmodule AutheerWeb.ConnCase do
   end
 
   setup _tags do
-    {:ok, conn: Phoenix.ConnTest.build_conn()}
+    conn = Phoenix.ConnTest.build_conn()
+    |> Phoenix.ConnTest.init_test_session(%{})
+
+    {:ok, conn: conn}
   end
 end
