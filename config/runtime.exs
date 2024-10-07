@@ -50,15 +50,6 @@ if config_env() == :prod do
     ],
     secret_key_base: secret_key_base
 
-  config :autheer, :session,
-    store: :cookie,
-    key: "autheer",
-    signing_salt: "60/WIHg2",
-    same_site: "Lax",
-    domain: System.get_env("AUTHEER_DOMAIN") || raise "environment variable AUTHEER_DOMAIN is missing."
-
-  config :autheer, :host, System.get_env("AUTHEER_HOST") || raise "environment variable AUTHEER_HOST is missing."
-
   # ## SSL Support
   #
   # To get SSL working, you will need to add the `https` key

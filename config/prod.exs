@@ -12,3 +12,12 @@ config :logger, level: :info
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
+
+config :autheer, :session,
+  store: :cookie,
+  key: "autheer",
+  signing_salt: "60/WIHg2",
+  same_site: "Lax",
+  domain: "yakushka.ru"
+
+config :autheer, :host, "https://auth.yakushka.ru"
